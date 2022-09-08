@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
 interface Props {
     addTodo: AddTodo;
@@ -8,7 +8,11 @@ const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
     const [text, setText] = useState('');
     return (
         <form>
-            <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
+            <input
+                type="text"
+                value={text}
+                onChange={(e) => setText(e.target.value)}
+            />
             <button
                 type="submit"
                 onClick={(e) => {
@@ -16,9 +20,11 @@ const AddTodoForm: React.FC<Props> = ({ addTodo }) => {
                     addTodo(text);
                     setText('');
                 }}
-            >Add Todo</button>
+            >
+                Add Todo
+            </button>
         </form>
-    )
-}
+    );
+};
 
 export default AddTodoForm;
